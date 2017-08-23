@@ -1,0 +1,64 @@
+<?php
+/**
+ *
+ * APWEB Framework (http://framework.artphoweb.com/)
+ * APWEB FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @link      http://github.com/zebedeu/artphoweb for the canonical source repository
+ * @copyright (c) 2016.  APWEB  Software Technologies AO Inc. (http://www.artphoweb.com)
+ * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
+ * @author    Marcio Zebedeu - artphoweb@artphoweb.com
+ * @version   1.0.0
+ */
+/**
+ * Created by PhpStorm.
+ * User: artphotografie
+ * Date: 2016/02/14
+ * Time: 12:38 PM
+ */
+?>
+<?php
+
+use FWAP\Helpers\Assets;
+use FWAP\Library\Session;
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title><?= $title = $this->title ?? "FW APP" ?></title>
+        <link rel="stylesheet" href="<?php echo URL; ?>Public/bootstrap-4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo URL; ?>Public/bootstrap-4/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo URL; ?>Public/bootstrap-4/css/bootstrap.css">
+
+    </head>
+    <script src="<?php echo URL; ?>Public/bootstrap-4/js/jquery-3.2.1.js"></script>
+
+
+    <?php
+    if (isset($this->Js)) {
+        foreach ($this->Js as $Js) {
+            echo ' <script type="text/javascript" src="' . URL . 'view/' . $Js . '"></script>';
+        }
+    }
+    ?>
+    <body>
+        <!-- Navbar -->
+<nav class="navbar navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">APWEB FRAMEWORK</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>      
+    </ul>
+  </div>
+</nav>
