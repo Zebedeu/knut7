@@ -14,25 +14,35 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Database\Drives\iDatabase;
 
+class DashboardModel {
 
-use FWAP\Helpers\Routing\Routes;
+    /**
+     * @var iDatabase
+     */
+    private $entity;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+    public function __construct(iDatabase $entity) {
+        $this->entity = $entity;
+    }
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+    /**
+     * @param $data
+     * @return array
+     */
+    public function getAllUser() {
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+        return $this->entity->selectManager("SELECT * FROM usuarios");
+    }
 
-/**
- *
- * Load the Bootstrap!
- *
- */
+    /**
+     * @param $data
+     * @return bool
+     */
+    public function add($data) {
+        return $this->entity->insert('usuarios', $data);
+    }
 
-Routes::route();
+}

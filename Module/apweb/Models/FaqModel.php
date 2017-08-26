@@ -14,25 +14,41 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
-
-
-use FWAP\Helpers\Routing\Routes;
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
 
 /**
- *
- * Load the Bootstrap!
- *
+ * Created by PhpStorm.
+ * User: artphotografie
+ * Date: 2016/06/22
+ * Time: 3:13 PM
  */
+use FWAP\Database\Drives\iDatabase;
 
-Routes::route();
+class FaqModel {
+
+    /**
+     * @var iDatabase
+     */
+    private $entity;
+
+    public function __construct(iDatabase $entity) {
+
+        $this->entity = $entity;
+    }
+
+    /**
+     * @param $data
+     * @return bool
+     */
+    public function insertFaq($data) {
+        return $this->entity->insert('faq', $data);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function _getFaq() {
+        return $this->entity->selectManager("SELECT * FROM faq");
+    }
+
+}

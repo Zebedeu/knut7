@@ -14,25 +14,27 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
 
+namespace Module\Applications\Libs;
 
-use FWAP\Helpers\Routing\Routes;
+use FWAP\Library\Session;
+use FWAP\Core\Ap_Controller;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+class ControllerMelhor extends Ap_Controller {
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+    public $array;
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+    public function __construct() {
+        parent::__construct();
+        $d = $this->array;
+    }
 
-/**
- *
- * Load the Bootstrap!
- *
- */
+    public function insert($data) {
+        $this->array = $data;
+        foreach ($this->array as $key => $value) {
+            echo ucwords($value);
+        }
+    }
 
-Routes::route();
+}

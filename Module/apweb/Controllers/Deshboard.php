@@ -14,25 +14,34 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Core\Controller\Controller;
+use FWAP\Helpers\Hook;
+use FWAP\Core\View\View;
+use FWAP\Core\Language\Language;
 
+class Deshboard extends Controller {
 
-use FWAP\Helpers\Routing\Routes;
+    public function __construct() {
+        parent::__construct();
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+        $this->view->Js = array('Deshboard/Js/default.js');
+    }
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+    public function index() {
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+        $this->view->title = 'Deshboard';
+        $this->view->render($this, 'index');
+    }
 
-/**
- *
- * Load the Bootstrap!
- *
- */
+    /**
+     *
+     */
+    public function chearsh_by_id() {
 
-Routes::route();
+        $resposta = $this->model->chearsh_by_id('demo');
+//         $resposta = $resposta[0];
+        Hook::Header('SearchUser');
+    }
+
+}

@@ -14,25 +14,35 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
-
-
-use FWAP\Helpers\Routing\Routes;
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
 
 /**
- *
- * Load the Bootstrap!
- *
+ * Created by PhpStorm.
+ * User: artphotografie
+ * Date: 2016/06/22
+ * Time: 3:13 PM
  */
+use FWAP\Database\Drives\iDatabase;
 
-Routes::route();
+class ProfileModel {
+
+    private $entity;
+
+    public function __construct(iDatabase $entity) {
+
+        $this->entity = $entity;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function openProfile() {
+        return $tnt = $this->entity->selectManager("SELECT archive FROM Profile");
+        var_dump($tnt);
+    }
+
+    public function insertProfile($data) {
+        return $this->entity->insert("Profile", $data);
+    }
+
+}

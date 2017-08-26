@@ -14,25 +14,21 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Core\Controller\Controller;
 
+class Uploads extends Controller {
 
-use FWAP\Helpers\Routing\Routes;
+    function __construct() {
+        parent::__construct();
+    }
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+    public function index() {
+        $this->view->render($this, 'index');
+    }
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+    public function files() {
+        
+    }
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
-
-/**
- *
- * Load the Bootstrap!
- *
- */
-
-Routes::route();
+}

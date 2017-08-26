@@ -1,6 +1,4 @@
-<?php
-
-/**
+/*
  *
  * knut7 Framework (http://framework.artphoweb.com/)
  * knut7 FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
@@ -14,25 +12,38 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
 
+$(function () {
+    $('#closse').click(function () {
+        document.location = 'User/DestroySession'
+    });
+});
+// $(function(){
 
-use FWAP\Helpers\Routing\Routes;
+// $('#signIn').validate({
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// rules:{
+// username: {
+// require: true,
+//         username: true
+// },
+//         password: {
+//         require: true,
+//                 minlength: 6
+//         }
+// },
+//         messages: {
+//         username: {
+//         require: "coloca um user ",
+//         }
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+//         password: {
+//         require: "coloca uma senha superior a 6 char",
+//         }
+//         }
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
-
-/**
- *
- * Load the Bootstrap!
- *
- */
-
-Routes::route();
+// });
+//         $('#username').focus();
+//         $('#password').focus();
+// });

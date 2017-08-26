@@ -14,25 +14,26 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Database\Drives\iDatabase;
 
+class SearchUserModel {
 
-use FWAP\Helpers\Routing\Routes;
+    private $id = null;
+    private $entity;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+    public function __construct(iDatabase $entity) {
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+        $this->entity = $entity;
+    }
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+    /**
+     * @param $id
+     * @return array
+     */
+    public function getSearch($busca) {
 
-/**
- *
- * Load the Bootstrap!
- *
- */
+        return $this->entity->selectManager("SELECT * FROM article, usuarios WHERE content, usuarios.name, usuarios.city like '%$busca%'ORDER BY title DESC LIMIT 10");
+    }
 
-Routes::route();
+}

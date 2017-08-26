@@ -1,0 +1,162 @@
+
+<?php
+
+use \FWAP\Helpers\Security\Session;
+use FWAP\Helpers\Time\Timestamp;
+
+?>
+<!-- { col-2 | col-3 | col-4 } -->
+
+
+<?php foreach ($this->public as $key => $value) { ?>
+    <section class="content">
+
+        <div class="container col-lg-12">
+            <div class="row">
+                <br/><br/>
+
+                <div>
+                    <div class="thumbnail">
+                       <!--  <img src="<?php echo URL; ?>Public/assets/images/bootstrap.png" alt=""> -->
+                        <div class="caption">
+                            <div>
+
+                                <header>
+                                    <h3 class="btn btn-default"><?php echo $value['title']; ?></h3>
+                                </header>
+                                <h4>Postado em <smal><?php echo $value['post_date']; ?></smal></h4>
+                                <footer>
+                                    <?php
+                                    Timestamp::_getDataTime_stemp($value['post_date']);
+                                    ?>
+
+
+                                    <!-- --><?php //echo $value['date'];                                                       ?>
+                                </footer>
+                                <br/>
+                                <p> <?php echo $post = $value['content'] ?? null; ?></p>
+
+                                <?php
+                                /*
+                                  /* insert comments
+                                 */
+                                ?>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <a href="<?php echo URL; ?>article">Voltar</a>
+                    <?php
+                    if (Session::exist()) {
+                        if (Session::get('role') == 'owner' || Session::get('role') == 'admin'):
+                            ?>
+                            <a href=<?php echo URL; ?>article/editar/<?php echo $value['id_article'] ?>>editar</a>
+                            <?php
+                        endif;
+                    }
+                    ?>
+
+                <?php } ?>
+            </div>
+            <div id="content" class="col-sm-6">
+                <div class="well">
+
+                    <form method="post" action="<?php echo URL ?>article/insertComments" >
+
+                        <?php
+                        if (Session::exist()) {
+                            if (Session::get('role') == 'owner' || Session::get('role') == 'admin' || Session::get('role') == 'default'):
+                                ?>
+                                <div class="form-group">
+                                    <input type="" name="nome" class="form-control" value="<?php echo Session::get('U_NAME'); ?>">
+                                    <?php
+                                endif;
+                            } else {
+                                ?> 
+                                <div class="form-group">
+                                    <input type="text" name="nome" class="form-control" placeholder="Your Name" >
+                                <?php } ?> 
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" name="comments"  class="form-control" placeholder="Enter Your Comment here"></textarea>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="article_id" class="form-control" value="<?php echo $value['id_article']; ?>">
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="post_date" class="form-control" value="<?php echo date('Y-m-d G:i:s'); ?>">
+
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg  btn-block btn-default" type="submit">Comment </button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+
+            <table  class="table table-responsive col-lg-4">
+                <thead>
+                    <tr>
+                        <th style="width:20%; style="height:10%;">Nome</th>
+                        <th>Comentarios</th>
+                        <?php
+                        if (Session::exist()) {
+                            if (Session::get('role') == 'owner' || Session::get('role') == 'admin') {
+                                ?>
+                                <th>Deletar</th>
+                                <?php
+                            }
+                        }
+                        ?>
+
+                    </tr>
+
+
+
+                </thead>
+                <tbody>
+
+                    <?php foreach ($this->comments as $key => $comm) { ?>
+                        <tr>
+                            <?php echo $comm['post_date']; ?>
+                            <td><p class="glyphicon glyphicon-comment "> </p><em><?php echo "\n" . $comm['nome']; ?> | <?php Timestamp::_getDataTime_stemp($comm['post_date']); ?></em></td>
+                            <td><em><?php echo $comm['comments']; ?></em></td>
+
+                            <?php
+                            if (Session::exist()) {
+                                if (Session::get('role') == 'owner' || Session::get('role') == 'admin') {
+                                    ?>
+
+                                    <td><a  href="<?php echo URL; ?>/article/deleteComments/<?php echo $comm['id']; ?>"><p class="glyphicon glyphicon-remove "></p></a></td>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+
+                        </tr>
+                    <br/>
+                <?php } ?>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+

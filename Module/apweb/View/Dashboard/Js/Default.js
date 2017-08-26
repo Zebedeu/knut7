@@ -1,6 +1,4 @@
-<?php
-
-/**
+/*
  *
  * knut7 Framework (http://framework.artphoweb.com/)
  * knut7 FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
@@ -14,25 +12,25 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
 
+// $(function() {
 
-use FWAP\Helpers\Routing\Routes;
+// 	$.get('Deshboard/chearsh_by_id/', function(o){
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// 		for (var i = 0; i < o.length; i++) {
+// 		}('#listInserts').append(o[i].username);
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+// 	}, 'json');
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+// 	$('#randomInsert').submit(function(){
+// 		var url = $(this).attr('action');
+// 		var data = $(this).serialize();
+// 		$.post(url, data, function(o){
 
-/**
- *
- * Load the Bootstrap!
- *
- */
 
-Routes::route();
+// 		});
+// 		return false;
+// 	});
+// });
+

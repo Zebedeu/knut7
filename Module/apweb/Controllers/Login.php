@@ -14,25 +14,27 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
-
-
-use FWAP\Helpers\Routing\Routes;
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
 
 /**
- *
- * Load the Bootstrap!
- *
+ * Created by PhpStorm.
+ * User: artphotografie
+ * Date: 2016/02/14
+ * Time: 11:08 AM
  */
+use FWAP\Core\Controller\Controller;
 
-Routes::route();
+class Login extends Controller {
+
+    public function __construct() {
+        parent::__construct();
+
+        $this->view->Js = array('Login/Js/default.js');
+    }
+
+    public function index() {
+        $this->view->title = 'ENTRAR';
+        $this->view->render($this, 'index');
+    }
+
+}

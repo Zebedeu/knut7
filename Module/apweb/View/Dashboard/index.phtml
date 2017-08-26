@@ -14,25 +14,12 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Helpers\Form;
+?>
 
 
-use FWAP\Helpers\Routing\Routes;
+<?php include 'column_left.phtml';
+?>
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
-
-/**
- *
- * Load the Bootstrap!
- *
- */
-
-Routes::route();

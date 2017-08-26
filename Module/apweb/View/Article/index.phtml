@@ -1,0 +1,31 @@
+
+<?php
+
+use FWAP\Library\Timestamp;
+use \FWAP\Helpers\Security\Session;
+?>
+<!-- { col-2 | col-3 | col-4 } -->
+
+<section class="content-3 col-3">
+    <div class="container">
+        <div class="row">
+            <?php foreach ($this->public as $key => $value) : ?>
+
+                <div class="col-lg-4">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <h4><?php echo $value['title']; ?></h4>
+                            <footer><?php echo $value['post_date']; ?></footer>
+                            <p><?php echo $value['excerpt']; ?></p>
+                        </div>
+                        <div class="group">
+                            <a href="<?php echo URL; ?>Article/art_pre_post/<?php echo $value['id_article']; ?>" class="btn btn-danger">Ler Mais</a>
+                        </div>
+                    </div> <!-- panel panel-default text-center -->
+                </div> <!-- col-lg-4 -->
+            <?php endforeach; ?>
+        </div><!-- End Row -->
+    </div>
+</section>
+

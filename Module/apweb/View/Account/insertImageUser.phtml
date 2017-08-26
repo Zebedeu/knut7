@@ -1,0 +1,23 @@
+<?php
+
+use FWAP\Helpers\Uploads;
+use \FWAP\Helpers\Security\Session;
+?>
+<div class="container">
+    <section>
+        <div class="page-header text-center btn-default">
+            <!--            <h2>Faça o Uploads de um ficheiro</h2>
+                        <form method="POST" action="<?php echo URL; ?>cpanel/getImage" enctype="multipart/form-data">
+                            <input type="txt" name="legenda" value="legenda" >
+                <label for="pic">Please upload a profile picture:</label>
+                <input type="file" name="archive[]" id="pic" />
+            
+                <input type="submit" />-->
+            <?php
+            $new = new Uploads();
+            if (Session::exist()) {
+                echo $new->formUploadFiles(URL . 'account/insertImageUser', 'hidden', 'usuarios_id', Session::get('ID'));
+            }
+            ?>
+        </div>
+    </section>

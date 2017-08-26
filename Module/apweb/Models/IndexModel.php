@@ -14,25 +14,28 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
+use FWAP\Database\Drives\iDatabase;
 
+class IndexModel {
 
-use FWAP\Helpers\Routing\Routes;
+    private $entity;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+    public function __construct(iDatabase $entity) {
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+        $this->entity = $entity;
+    }
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
+    /**
+     * select que vai pegar tudo da base de dados na ordem desc por id
+     * @return array
+     */
+    public function exibirAricle() {
+        return $this->entity->selectManager("SELECT  *  FROM article ORDER BY id_article  DESC  limit 3 ");
+    }
 
-/**
- *
- * Load the Bootstrap!
- *
- */
+    public function exibiAllTitle() {
+        return $this->entity->selectManager("SELECT  *  FROM article ORDER BY id_article  DESC  ");
+    }
 
-Routes::route();
+}

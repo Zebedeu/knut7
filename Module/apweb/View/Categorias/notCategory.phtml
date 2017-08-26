@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * knut7 Framework (http://framework.artphoweb.com/)
@@ -14,25 +13,26 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
-
-
-use FWAP\Helpers\Routing\Routes;
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
-
 /**
- *
- * Load the Bootstrap!
- *
+ * Date: 2016/02/14
+ * Time: 11:13 AM
  */
+?>
 
-Routes::route();
+
+<div class="container">
+    <section>
+        <div class="page-header" id="features">
+            <!-- <h2>FAQ.<small>Perguntas Mais Frequentes</small></h2> -->
+        </div><!-- End page header -->
+
+        <?php
+// foreach ($this->Allfoot as $key => $value) :
+        foreach ($this->notCat as $key => $values) :
+            $da = str_replace(' ', '', $values['name']);
+            ?>
+
+            <a href="<?php echo URL; ?>Article/art_pre_post/<?php echo $values['id_article']; ?>" class="btn btn-danger"><?php echo $values['title']; ?></a>
+
+        <?php endforeach; ?>

@@ -1,0 +1,173 @@
+<?php
+
+/**
+ *
+ * knut7 Framework (http://framework.artphoweb.com/)
+ * knut7 FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @link      http://github.com/zebedeu/artphoweb for the canonical source repository
+ * @copyright (c) 2016.  knut7  Software Technologies AO Inc. (http://www.artphoweb.com)
+ * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
+ * @author    Marcio Zebedeu - artphoweb@artphoweb.com
+ * @version   1.0.0
+ */
+use FWAP\Library\Form;
+
+?>
+
+
+<div class="container">
+    <section>
+        <div class="page-header text-center" id="contact " >
+            <h2>POSTAGEM DE ARTIGO<small></small></h2>
+        </div> <!-- End Page Header -->
+
+        <div id="content" class="col-sm-8">
+            <div class="well">
+                <?php
+                echo Form::open(['action' => "insertArticle", 'class' => 'form-horizontal', 'method' => 'post', 'enctype' => 'multipart/form-data']);
+                ?>
+                <div class="form-group">
+
+                    <label for="user-name" class="control-label">Titulo</label>
+                    <?php
+                    echo Form::input(['type' => 'text', 'name' => 'title', 'class' => 'form-control', 'id' => 'user-name', 'placeholder' => 'Titulo']);
+                    ?>
+                </div><!-- End Group -->
+
+                <div class="form-group">
+                    <label for="user-name" class=" control-label">Data</label>
+                    <div class="col-lg-2">
+                        <?php
+                        echo Form::input(['type' => 'datime', 'name' => 'post_date', 'class' => 'form-control', 'id' => 'user-name', 'placeholder' => 'Data']);
+                        ?>
+                    </div>
+                </div><!-- End Group -->
+
+                <div class="form-group">
+                    <label for="user-message" class=" control-label">Postagem Resumida</label>
+                    <?php
+                    echo Form::textBox(['name' => 'excerpt', 'id' => 'user-name', 'class' => 'form-control', 'cols' => '20', 'rows' => '5', 'placeholder' => 'Postagem Resumida']);
+                    ?>
+                </div><!-- End Group -->
+
+                <div class="form-group">
+                    <label for="user-message" class="control-label">Postagem</label>
+                    <?php
+                    echo Form::textBox(['name' => 'content', 'id' => 'elm1', 'class' => 'form-control', 'cols' => '20', 'rows' => '10', 'placeholder' => 'Postagem']);
+                    ?>
+                    <div>
+                        <a href="javascript:;" onclick="tinymce.get('elm1').show();
+                                return false;">[Show]</a>
+                        <a href="javascript:;" onclick="tinymce.get('elm1').hide();
+                                return false;">[Hide]</a>
+                        <a href="javascript:;" onclick="tinymce.execCommand('mceAddEditor', false, 'elm1');
+                                return false;">[Add]</a>
+                        <a href="javascript:;" onclick="tinymce.get('elm1').remove();
+                                return false;">[Remove]</a>
+                        <a href="javascript:;" onclick="tinymce.get('elm1').execCommand('Bold');
+                                return false;">[Bold]</a>
+                        <a href="javascript:;" onclick="alert(tinymce.get('elm1').getContent());
+                                return false;">[Get contents]</a>
+                        <a href="javascript:;" onclick="alert(tinymce.get('elm1').getContent({format: 'raw'}));
+                                return false;">[Get raw]</a>
+                        <a href="javascript:;" onclick="alert(tinymce.get('elm1').selection.getContent());
+                                return false;">[Get selected HTML]</a>
+                        <a href="javascript:;" onclick="alert(tinymce.get('elm1').selection.getContent({format: 'text'}));
+                                return false;">[Get selected text]</a>
+                        <a href="javascript:;" onclick="alert(tinymce.get('elm1').selection.getNode().nodeName);
+                                return false;">[Get selected element]</a>
+                        <a href="javascript:;" onclick="tinymce.execCommand('mceInsertContent', false, '<b>Hello world!!</b>');
+                                return false;">[Insert HTML]</a>
+                        <a href="javascript:;" onclick="tinymce.execCommand('mceReplaceContent', false, '<b>{$selection}</b>');
+                                return false;">[Replace selection]</a>
+                    </div>
+                </div><!-- End Group -->
+
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label>Insere a categoria para o artigo:</label>
+                        <select name="id_cat" id="" class="form-control">
+                            <?php
+                            $contrato = $this->cate;
+
+                            foreach ($contrato as $key => $value) :
+                                ?>
+
+                                <option value="<?php echo $value['id_cat']; ?>"><?php echo $value['name']; ?></option>
+
+                            <?php endforeach; ?>
+
+                        </select>
+
+                    </div>
+                </div>
+
+
+
+                <?php
+                echo Form::button(['class' => 'btn btn-primary', 'type' => 'submit', 'data-toggle' => 'collapse', 'data-target' => '#collapseExample', 'aria-expanded' => 'false', 'aria-controls' => 'ollapseExample', 'value' => 'Puplicar']);
+                ?>
+                <a class="btn btn-default" href="<?php echo URL; ?>categorias/createCategory">Nova Categoria</a>
+                <?php
+                echo Form::close();
+                ?>
+
+
+            </div>
+
+        </div>
+        <div id="content pull-right" class="col-sm-4">
+            <br/><br/>
+
+            <div class="well">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th>artigo</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php foreach ($this->delete as $key => $delete) { ?>                
+
+                            <tr>
+                                <td><?php echo $delete['title']; ?> </td>
+                                <td ><a href="<?php echo URL; ?>article/deleteArticle/<?php echo $delete['id_article']; ?>"><i class="glyphicon glyphicon-trash"></i></a></td>
+
+                            </tr>
+                        <?php }
+                        ?>
+                    </tbody>
+                </table>
+
+
+
+
+
+            </div>  <!-- end Well -->
+        </div> <!-- end contend and col-sm-6 -->
+    </section>
+
+</div>
+
+<script>
+
+
+    /**
+     * Comment
+     */
+    $(function () {
+        $('#e').click(function (e) {
+            $('body').options();
+        });
+    });
+
+
+
+</script>

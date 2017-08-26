@@ -1,7 +1,5 @@
 <?php
-
 /**
- *
  * knut7 Framework (http://framework.artphoweb.com/)
  * knut7 FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
  *
@@ -14,25 +12,16 @@
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
- *
  */
-
-
-use FWAP\Helpers\Routing\Routes;
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
-
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
-require 'vendor/autoload.php';
 
 /**
- *
- * Load the Bootstrap!
- *
+ * Created by PhpStorm.
+ * User: artphotografie
+ * Date: 18/08/17
+ * Time: 07:46
  */
 
-Routes::route();
+
+return  ['dns' => DB_TYPE . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME,
+    'users' => DB_USER,
+    'pass' => DB_PASS];
