@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.org/Knut7/Knut7.svg?branch=master)](https://travis-ci.org/Knut7/Knut7)
 [![license](https://img.shields.io/github/license/Knut7/Knut7.svg)]()
 [![Packagist](https://img.shields.io/packagist/v/Knut7/Knut7.svg)]()
+
+[![Total Downloads](https://poser.pugx.org/Knut7/Knut7/downloads)](https://packagist.org/packages/Knut7/Knut7)
+[![Daily Downloads](https://poser.pugx.org/Knut7/Knut7/d/daily)](https://packagist.org/packages/Knut7/Knut7)
+[![Monthly Downloads](https://poser.pugx.org/Knut7/Knut7/d/monthly)](https://packagist.org/packages/Knut7/Knut7)
 
 /**
  *
