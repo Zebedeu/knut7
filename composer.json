@@ -16,11 +16,17 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "knut7/framework": "@dev"
+        "knut7/framework": "@dev",
+        "phpunit/phpunit": "6.3.*"
     },
     "autoload": {
         "psr-4": {
             "Knut7\\Knut7\\": "Module/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     }
 }
