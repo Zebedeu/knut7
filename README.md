@@ -55,6 +55,11 @@ Link pra contribuições e Download : https://github.com/aphra-frameworkaphra-fr
 
 
 
+#Via Composer Create-Project
+
+Alternativamente, você também pode instalar o Laravel emitindo o comando Composer em seu terminal:create-project
+
+composer create-project --prefer-dist knut7/knut7 blog
 
 
 #Criando o Projecto
