@@ -55,14 +55,14 @@ Link pra contribuições e Download : https://github.com/aphra-frameworkaphra-fr
 
 
 
-#Via Composer Create-Project
+##Via Composer Create-Project
 
 Alternativamente, você também pode instalar o Laravel emitindo o comando Composer em seu terminal:create-project
 
 composer create-project --prefer-dist knut7/knut7 blog
 
 
-#Criando o Projecto
+##Criando o Projecto
 
 Existe um Diretório padrão na framewok que se chama Module. Dentro dela, você criara um outro diretório e renomeara dando o nome do teu projecto como mostra a fig 1.1. 
 
