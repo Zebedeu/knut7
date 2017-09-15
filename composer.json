@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "knut7/framework": "@dev",
+        "knut7/framework": "1.0.*",
         "phpunit/phpunit": "6.3.*"
     },
     "autoload": {
