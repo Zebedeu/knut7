@@ -55,14 +55,9 @@ Link pra contribuições e Download : https://github.com/aphra-frameworkaphra-fr
 
 
 
-## Via Composer Create-Project
-
-Alternativamente, você também pode instalar o Knut7 emitindo o comando Composer em seu terminal:create-project
-
-composer create-project --prefer-dist knut7/knut7 blog
 
 
-## Criando o Projecto
+#Criando o Projecto
 
 Existe um Diretório padrão na framewok que se chama Module. Dentro dela, você criara um outro diretório e renomeara dando o nome do teu projecto como mostra a fig 1.1. 
 
@@ -90,9 +85,6 @@ A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC),
 ## Constantes
 
 
-
-HEADER_TITLE -> Aponta ao titulo para o cabeçalho
-HEADER_DESCRIPTION -> aponta ate  a descirção para o cabeçalho;
 URL -> A URL serve para chamar o directório raiz;
 HTTPS -> A URL serve para chamar o directório raiz. Use se saber o que esta a fazer; 
 DIR_FILE -> Carrega o directório do projecto;

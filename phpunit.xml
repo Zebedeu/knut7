@@ -13,4 +13,17 @@
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <ini name= "DB_TYPE" value= "DB_TYPE" />
+        <ini name= "DB_HOST" value= "DB_HOST" />
+        <ini name= "DB_USER" value= "DB_HOST" />
+        <ini name= "DB_PASS" value= "DB_HOST" />
+        <ini name= "DB_NAME" value= "DB_NAME" />
+        <ini name= "VIEW" value= "VIEW" />
+        <ini name= "ALGO" value= "ALGO" />
+        <ini name= "DIR_FILES" value= "DIR_FILES" />
+        <ini name= "URL" value= "URL" />
+        <ini name= "HTTPS" value= "HTTPS" />
+        <server name= "HTTP_HOST" value= "HTTP_HOST" />
+    </php>
 </phpunit>
