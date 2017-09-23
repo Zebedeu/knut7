@@ -18,15 +18,15 @@
  */
 
 
-use FWAP\Helpers\Routing\Routes;
+use Ballybran\Helpers\Routing\Routes;
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// require_once "FWAP/Config/config.php";
-// require_once "FWAP/Config/autoload.php";
+// require_once "Ballybran/Config/config.php";
+// require_once "Ballybran/Config/autoload.php";
 
-require 'vendor/knut7/framework/src/FWAP/Config/Config.php';
+require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
 require 'vendor/autoload.php';
 
 /**
