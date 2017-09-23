@@ -1,8 +1,8 @@
 <?php
 
 
-use FWAP\Core\Controller\Controller;
-use FWAP\Core\Controller\iController;
+use Ballybran\Core\Controller\Controller;
+use Ballybran\Core\Controller\iController;
 use PHPUnit\Framework\TestCase as PHPUnit;
 
 
@@ -11,7 +11,7 @@ class ControllerTest extends PHPUnit {
     private $objController;
 
     public function setUp() {
-        $this->objController = new \FWAP\Core\Controller\Controller();
+        $this->objController = new \Ballybran\Core\Controller\Controller();
 
     }
 
@@ -24,7 +24,7 @@ class ControllerTest extends PHPUnit {
     public function testClassInstance()
     {
 
-        $this->assertInstanceOf('\FWAP\Core\Model\Model', $this->objController);
+        $this->assertInstanceOf('\Ballybran\Core\Model\Model', $this->objController);
     }
 //    public function testClassController() {
 ////               $expect = array( 'dns'=>'mysql:host=localhost;port=8888;dbname=apweb', 'users'=> 'root', 'pass'=> 'root');
