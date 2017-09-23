@@ -1,9 +1,6 @@
+[![Build Status](https://travis-ci.org/Knut7/Knut7.svg?branch=master)](https://travis-ci.org/Knut7/Knut7)
 [![license](https://img.shields.io/github/license/Knut7/Knut7.svg)]()
 [![Packagist](https://img.shields.io/packagist/v/Knut7/Knut7.svg)]()
-
-[![Total Downloads](https://poser.pugx.org/Knut7/Knut7/downloads)](https://packagist.org/packages/Knut7/Knut7)
-[![Daily Downloads](https://poser.pugx.org/Knut7/Knut7/d/daily)](https://packagist.org/packages/Knut7/Knut7)
-[![Monthly Downloads](https://poser.pugx.org/Knut7/Knut7/d/monthly)](https://packagist.org/packages/Knut7/Knut7)
 
 /**
  *
@@ -85,6 +82,9 @@ A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC),
 ## Constantes
 
 
+
+HEADER_TITLE -> Aponta ao titulo para o cabeçalho
+HEADER_DESCRIPTION -> aponta ate  a descirção para o cabeçalho;
 URL -> A URL serve para chamar o directório raiz;
 HTTPS -> A URL serve para chamar o directório raiz. Use se saber o que esta a fazer; 
 DIR_FILE -> Carrega o directório do projecto;
@@ -107,7 +107,7 @@ AUTH_SALT;
 SECURE_AUTH_SALT;
 LOGGED_IN_SALT;
 NONCE_SALT;
-Ballybran_CACHE;
+FWAP_CACHE;
 
 
 ?>

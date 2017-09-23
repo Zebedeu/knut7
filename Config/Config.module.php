@@ -18,7 +18,7 @@
 //insert the name for your project
 
 
-$MY_PROJECT_NAME = '';
+$MY_PROJECT_NAME = 'safeAngola';
 
 $code = 'pt';
 
@@ -31,6 +31,6 @@ define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
-define('DB_NAME', '');
+define('DB_NAME', 'apweb');
 
 
