@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/knut7/knut7.svg?branch=master)](https://travis-ci.org/knut7/knut7)
 [![Build Status](https://travis-ci.org/Knut7/Knut7.svg?branch=master)](https://travis-ci.org/Knut7/Knut7)
 [![license](https://img.shields.io/github/license/Knut7/Knut7.svg)]()
 [![Packagist](https://img.shields.io/packagist/v/Knut7/Knut7.svg)]()
