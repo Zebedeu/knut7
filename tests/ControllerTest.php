@@ -3,6 +3,7 @@
 
 use Ballybran\Core\Controller\Controller;
 use Ballybran\Core\Controller\iController;
+use Ballybran\Helpers\Utility\Hash;
 use PHPUnit\Framework\TestCase as PHPUnit;
 
 
@@ -25,14 +26,24 @@ class ControllerTest extends PHPUnit {
     {
 
         $this->assertInstanceOf('\Ballybran\Core\Model\Model', $this->objController);
-    }
-//    public function testClassController() {
-////               $expect = array( 'dns'=>'mysql:host=localhost;port=8888;dbname=apweb', 'users'=> 'root', 'pass'=> 'root');
-//        $obj = $this->objController->getModel();
-//
-//        $this->assertEquals($obj, $this->objController);
-//
 
-//    }
+    }
+
+    public function testReturnToHashTokenClass() {
+
+        $token = Hash::token( 233);
+
+        $this->assertNotFalse($token);
+    }
+
+    public function testCreateHashCript(){
+
+        $string = "test1234";
+        $hash = Hash::Create(ALGO, $string, HASH_KEY);
+
+        $this->assertNotFalse($hash);
+
+    }
+
 
 }
