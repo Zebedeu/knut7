@@ -1,0 +1,27 @@
+
+.xdebug-var-dump {
+
+    background :#000000 !important;
+    color: #ffffff;
+}
+pre.xdebug-var-dump {
+    white-space: pre;
+    word-wrap: inherit;
+
+}
+small {
+    color:#0fc6ee;
+}
+
+body > pre > font {
+    color: red;
+
+}
+
+body > pre > i {
+    color: #ffffff;
+}
+
+b {
+    color: darkorange;
+}

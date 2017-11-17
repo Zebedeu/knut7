@@ -1,9 +1,11 @@
-
 {
     "name": "knut7/knut7",
     "type": "library",
     "description": "Min framwork em mvc para PHP 7.0.0 ou superior",
-    "keywords": ["framwork","mvc"],
+    "keywords": [
+        "framwork",
+        "mvc"
+    ],
     "homepage": "https://github.com/Knut7/Knut7",
     "license": "MIT",
     "authors": [
@@ -14,9 +16,17 @@
             "role": "Developer"
         }
     ],
-    "require-dev": {
+    "require": {
         "php": ">=7.0.0",
-        "knut7/framework": "@dev"
+        "knut7/framework": "@dev",
+        "symfony/console": "~3.3",
+        "symfony/debug": "~3.3",
+        "symfony/finder": "~3.3",
+        "symfony/http-foundation": "~3.3",
+        "symfony/http-kernel": "~3.3",
+        "symfony/process": "~3.3",
+        "symfony/routing": "~3.3",
+        "symfony/var-dumper": "~3.3"
     },
     "autoload": {
         "psr-4": {

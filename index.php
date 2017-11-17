@@ -18,14 +18,14 @@
  */
 
 
+use Ballybran\Helpers\Routing\Map;
 use Ballybran\Helpers\Routing\Routes;
+use Ballybran\Helpers\Security\RenderFiles;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
-// require_once "Ballybran/Config/config.php";
-// require_once "Ballybran/Config/autoload.php";
 
+
+require_once "vendor/knut7/framework/src/Ballybran/Config/autoload.php";
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
 require 'vendor/autoload.php';
 
@@ -35,4 +35,32 @@ require 'vendor/autoload.php';
  *
  */
 
+$registry = \Ballybran\Database\RegistryDatabase::getInstance();
+$registry->set("PDO",
+
+                new \Ballybran\Database\Drives\AbstractDatabasePDO
+                    (
+                    include __DIR__.'/Config/Database/Config.php'
+                    )
+                );
+$registry->set("MYSQL",
+
+    new \Ballybran\Database\Drives\AbstractDatabaseMysqli()
+);
+$registry->set("POSTGL",
+
+    new \Ballybran\Database\Drives\AbstractDatabasePDO
+    (
+        include __DIR__.'/Config/Database/Config.php'
+    )
+);
 Routes::route();
+
+
+//Map::add('User/', null, function() {
+//})->exe();
+//
+//$c = Map::add('Index/', null, function() {
+//})->exe();
+
+exit;

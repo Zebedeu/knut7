@@ -22,6 +22,10 @@
  */
 
 
-return  ['dns' => DB_TYPE . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME,
-    'users' => DB_USER,
-    'pass' => DB_PASS];
+return
+    [
+        'dns' => DB_TYPE . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME,
+        'users' => DB_USER,
+        'pass' => DB_PASS
+
+    ];

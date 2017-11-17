@@ -18,19 +18,19 @@
 //insert the name for your project
 
 
-$MY_PROJECT_NAME = 'safeAngola';
 
-$code = 'pt';
+$MY_PROJECT_NAME = 'Clinica';
+
+$code = 'en';
 
 /**
  *
  */
 define('TYPE', 'PDO'); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
-define('DB_PORT', 8888);
+define('DB_PORT', 3306);
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_NAME', 'apweb');
-
 
