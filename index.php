@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * knut7 Framework (http://framework.artphoweb.com/)
