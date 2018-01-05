@@ -37,5 +37,9 @@
         <const name="str" value="it is test" />
         <const name="ALGO" value="md5" />
         <const name="DIR_LOGS" value="" />
+        <const name="PV" value="Module/" />
+        <const name="APP" value="" />
+        <const name="DS" value="/" />
+        <const name="URL" value="localhost/teste" />
     </php>
 </phpunit>

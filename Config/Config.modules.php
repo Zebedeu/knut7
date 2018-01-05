@@ -14,8 +14,9 @@
  * @version   1.0.2
  */
 
-return array(
+$c = array(
     "application" => array(
         "directory" => realpath(dirname(__FILE__)) . "/application",
     ),
 );
+
