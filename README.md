@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/knut7/knut7.svg?branch=master)](https://travis-ci.org/knut7/knut7)
-
+[![Build Status](https://travis-ci.org/Knut7/Knut7.svg?branch=master)](https://travis-ci.org/Knut7/Knut7)
 [![license](https://img.shields.io/github/license/Knut7/Knut7.svg)]()
 [![Packagist](https://img.shields.io/packagist/v/Knut7/Knut7.svg)]()
 
@@ -49,6 +48,7 @@ A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC) 
 PHP v7.x
 Conhecimentos básicos de php
 Do resto é moleza.
+
 Link pra contribuições e Download : https://github.com/knut7 && https://github.com/knut7/framework
 
 
