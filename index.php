@@ -17,8 +17,6 @@
 
 use Ballybran\Helpers\Routing\Routes;
 
-
-
 require_once "vendor/knut7/framework/src/Ballybran/Config/autoload.php";
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
 require 'vendor/autoload.php';
@@ -28,6 +26,9 @@ require 'vendor/autoload.php';
  * Load the Bootstrap!
  *
  */
+
+ini_set("display_errors", 1);
+
 
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set("PDO",

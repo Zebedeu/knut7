@@ -785,7 +785,7 @@ Parameters
 
 Upload
 
- class Uploads
+ class FileSystem
  
      public $width = 2000 ( Width for image);
      public $height = 2000 ( height for image);
