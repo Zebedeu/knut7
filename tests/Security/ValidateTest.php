@@ -64,7 +64,7 @@ class ValidateTest extends PHPUnit
             ->post('lastname')->val('maxlength', 20)
             ->post('email')->val('minlength', 5)
 
-            ->post('telephone')->val('digit')->numeric()->submit();
+            ->post('telephone')->val('digit')->submit();
         $this->assertEquals(["firstname" => "John", "lastname" => "Doe", "email" => "johnDoe@gmail.com", "telephone" => 244913750140], $this->valid->getPostData());
 
 
