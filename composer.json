@@ -18,7 +18,14 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "knut7/framework": "dev-master",
+        "knut7/framework": "ˆ~1.0",
+        "phpmailer/phpmailer": "~6.0",
+        "swiftmailer/swiftmailer": "^6.0"
+    },
+
+    "require-dev": {
+        "php": ">=7.0.0",
+        "knut7/framework": "ˆdev-master",
         "knut7/php-graphic": "^0.1.0",
         "php-ai/php-ml": "^0.5.0",
         "phpmailer/phpmailer": "~6.0",
