@@ -20,7 +20,7 @@
     "minimum-stability": "stable",
         "require": {
             "php": ">=7.0.0",
-            "knut7/framework": "1.0.4",
+            "knut7/framework": ">=1.0.4",
             "phpmailer/phpmailer": "~6.0"
         },
 
