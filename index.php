@@ -29,36 +29,6 @@ require 'vendor/autoload.php';
 
 ini_set("display_errors", 1);
 
-
-$listUser =[
-    'mozilgla/5.0'
-];
-
-$ips = array(
-    '::192.168.0.2',
-    '0:0:0:0:0:0:192.168.0.2',
-    '192.168.0.2',
-    '::C0A8:2',
-    '0:0:0:0:0:0:C0A8:2'
-);
-
-//$fire =  new \Ballybran\Helpers\Firewall\Firewall($ips);
-////
-//$finals = array();
-//foreach($ips as $ip) {
-//    $finals[] = $fire->ipToHex($ip);
-//
-//}
-//var_dump($finals);
-//
-
-
-//$user_ip = $fire->find_net("localhost","255.255.255.224");
-
-//echo $user_ip; // Output IP address [Ex: 177.87.193.134]
-
-
-
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set("PDO",
 
@@ -69,24 +39,6 @@ $registry->set("PDO",
 );
 
 
-$filter = new \Ballybran\Helpers\Firewall\Firewall(
-    array(
-        '127.*.*.1',
-        '192.168.0.1',
-        '172.0.0.*',
-        '173.0.*.*',
-        '126.1.0.0/255.255.0.0',
-        '125.0.0.1-125.0.0.9',
-    ));
-$c = $filter->ipToHex('127.0.0.1');
-
     Routes::route();
-
-
-//Map::add('User/', null, function() {
-//})->exe();
-//
-//$c = Map::add('Index/', null, function() {
-//})->exe();
 
 exit;
