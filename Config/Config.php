@@ -18,7 +18,7 @@
 
 
 
-$MY_PROJECT_NAME = "";
+$MY_PROJECT_NAME = "App";
 
 $code = 'en';
 
