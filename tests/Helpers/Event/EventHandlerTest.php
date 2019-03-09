@@ -54,9 +54,6 @@ class EventHandlerTest extends TestCase
     public static function TestData($sender, $args)
     {
         $arg = ['args' => 7];
-
-        var_dump($sender);
-
         self::assertEquals($arg, $args);
     }
 }
