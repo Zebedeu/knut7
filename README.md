@@ -54,9 +54,9 @@ Fig 1: Criação do Projecto
 
 Pra configurar a framework é simples. Vai ate ao Diretório Config (1) e altera os valores em branco das variáveis existente no arquivo Config.module.php
 
-	•	Nome do Projecto. Ex. Pessoa
+    •   Nome do Projecto. Ex. Pessoa
 
-	•	Idioma do projecto (Padrão Inglês)
+    •   Idioma do projecto (Padrão Inglês)
 
 
 A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC), logo, a estrutura do teu projecto devera ficar da seguinte forma:
@@ -90,13 +90,6 @@ $dot['info.home.address'] = 'Kings Square';
 echo $dot['info.home.address'];
 ```
 
-## Install
-
-Install the latest version using [Composer](https://getcomposer.org/):
-
-```
-$ composer require adbario/php-dot-notation
-```
 
 ## Usage
 
@@ -552,5 +545,3 @@ function handleUnload($sender, $args)
 ## License
 
 [MIT license](LICENSE.md)
-
-
