@@ -54,13 +54,190 @@ Fig 1: Criação do Projecto
 
 Pra configurar a framework é simples. Vai ate ao Diretório Config (1) e altera os valores em branco das variáveis existente no arquivo Config.module.php
 
-    •   Nome do Projecto. Ex. Pessoa
+	•	Nome do Projecto. Ex. Pessoa
 
-    •   Idioma do projecto (Padrão Inglês)
+	•	Idioma do projecto (Padrão Inglês)
 
 
 A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC), logo, a estrutura do teu projecto devera ficar da seguinte forma:
 
+## Basic Controller
+
+```php
+
+
+namespace App\Controllers;
+
+
+use Ballybran\Core\Controller\AbstractController;
+
+class Index extends AbstractController
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function index(){
+        $this->view->title = "Welcome!!!";
+    	$this->view->render($this, 'index');
+    }
+
+}
+```
+
+## Basic Views
+
+
+## View
+
+```php
+	 
+	  	
+	  render Renders the view using the given data
+	  Example:
+	 
+	  
+	   $v = new View('view');
+	   $v->render(array('title' => 'My view'));
+	  
+	
+	  fetch Fetches the view result intead of sending it to the output buffer
+	 
+	  Example:
+	 
+	  
+	   $v = new View('view');
+	   $content = $v->fetch(array('title' => 'My view'));
+	  
+	 	
+	  get_data Returns the view data
+	 
+	  Example:
+	 
+	  run.php
+	  
+	   $v = new View('view');
+	   $v->render();
+	   $data = $v->get_data();
+	   echo $data['response'];
+	  
+	 
+	  view.php
+	  
+	   <?php $this['response'] = 'Hello' ?>
+	  
+
+	
+	  include_file Used by view to include sub-views
+	 
+	  Example:
+	 
+	  index.phtml
+	  
+	   <html>
+	   <body>
+	     body content
+	     <?php $this->include_file('footer') ?>
+	   </body>
+	   </html>
+	  
+	```
+
+
+	  set_layout Used by view to indicate the use of a layout.
+	 
+	  If a layout is selected, the normal output of the view wil be
+	  discarded.  The only way to send data to the layout is via
+	  capture()
+	 
+	  Example:
+	 
+	  main_view.phhtml
+
+	  ```php
+
+	   <?php $this->set_layout('layout') ?>
+	   <?php $this->capture() ?>
+	     body content
+	   <?php $this->end_capture('body') ?>
+	  
+	 
+	  layout.phtml
+	  
+	   <html>
+	   <body>
+	     <?php echo $this['body'] ?>
+	     <?php $this->include_file('footer') ?>
+	   </body>
+	   </html>
+	  
+```
+	 
+	
+	  capture Used by view to capture output.
+	 
+	  When a view is using a layout (via set_layout()), the only way to pass
+	  data to the layout is via capture(), but the view can use capture()
+	  to capture text any time, for any reason, even if the view is not using
+	  a layout
+	 
+	  Example:
+	 
+ ```php
+
+	  run.php
+	  
+	   $v = new View('index');
+	   $v->render();
+	   $data = $v->get_data();
+	   echo $data['response'];
+	  
+	 
+	  index.phtml
+	  
+	   <?php $this->capture() ?>
+	     captured content
+	   <?php $this->end_capture('response') ?>
+	  
+	```
+	 
+	
+	  end_capture Used by view to signal end of a capture().
+	 
+	  The content of the capture is stored under $name
+	 
+	  Example:
+ ```php
+	  run.php
+	  
+	   $v = new View('index');
+	   $v->render();
+	   $data = $v->get_data();
+	   echo $data['response'];
+	  
+	 
+	  index.phtml
+	  
+	   <?php $this->capture() ?>
+	     captured content
+	   <?php $this->end_capture('response') ?>
+	  
+ ```
+
+
+	  ArrayAccess methods
+
+```php
+ 
+	  Examples:
+	 
+	  view.php
+	  
+	   <?php echo $this['title'] ?>
+	   <?php $this['foo'] = 'bar' ?>
+	  
+```
 
 ## Examples
 
@@ -90,16 +267,23 @@ $dot['info.home.address'] = 'Kings Square';
 echo $dot['info.home.address'];
 ```
 
+## Install
+
+Install the latest version using [Composer](https://getcomposer.org/):
+
+```
+$ composer require adbario/php-dot-notation
+```
 
 ## Usage
 
-Create a new Dot object:
+Create a new \IteratorDot object:
 
 ```php
-$dot = new \Adbar\Dot;
+$dot = new \IteratorDot;
 
 // With existing array
-$dot = new \Adbar\Dot($array);
+$dot = new \IteratorDot($array);
 ```
 
 You can also use a helper function to create the object:
@@ -542,6 +726,26 @@ function handleUnload($sender, $args)
     echo 'object '.get_class($sender).' unloaded with '.count($args).' args!';
 }
 ```
+
+## HZIP
+
+# create
+```php
+
+$zip = new HZip(new \ZipArchive());
+echo $zip->create($limit = 500, $source = null, $destination = './');
+```
+# unzip
+
+```php
+
+$zip = new HZip(new \ZipArchive());
+$zip->unzip($source, $destination);
+```
+
+
 ## License
 
 [MIT license](LICENSE.md)
+
+
