@@ -91,49 +91,58 @@ class Index extends AbstractController
 
 ## View
 
-```php
 	 
 	  	
 	  render Renders the view using the given data
 	  Example:
 	 
-	  
+```php
+  
 	   $v = new View('view');
 	   $v->render(array('title' => 'My view'));
 	  
-	
+```
+
 	  fetch Fetches the view result intead of sending it to the output buffer
 	 
 	  Example:
 	 
-	  
+```php
+  
 	   $v = new View('view');
 	   $content = $v->fetch(array('title' => 'My view'));
 	  
-	 	
+```
+
 	  get_data Returns the view data
 	 
 	  Example:
 	 
 	  run.php
+ 
+```php
 	  
 	   $v = new View('view');
 	   $v->render();
 	   $data = $v->get_data();
 	   echo $data['response'];
 	  
-	 
+```	 
 	  view.php
-	  
-	   <?php $this['response'] = 'Hello' ?>
+
+```php
+  
+	   $this['response'] = 'Hello';
 	  
 
+```
 	
 	  include_file Used by view to include sub-views
 	 
 	  Example:
 	 
 	  index.phtml
+```php
 	  
 	   <html>
 	   <body>
@@ -142,7 +151,7 @@ class Index extends AbstractController
 	   </body>
 	   </html>
 	  
-	```
+```
 
 
 	  set_layout Used by view to indicate the use of a layout.
@@ -155,15 +164,18 @@ class Index extends AbstractController
 	 
 	  main_view.phhtml
 
-	  ```php
+```php
 
-	   <?php $this->set_layout('layout') ?>
-	   <?php $this->capture() ?>
+	  $this->set_layout('layout')
+	   $this->capture() 
 	     body content
-	   <?php $this->end_capture('body') ?>
+	   $this->end_capture('body') 
 	  
-	 
+ ```
+
 	  layout.phtml
+
+```php
 	  
 	   <html>
 	   <body>
@@ -184,56 +196,58 @@ class Index extends AbstractController
 	 
 	  Example:
 	 
- ```php
 
 	  run.php
-	  
+```php	  
 	   $v = new View('index');
 	   $v->render();
 	   $data = $v->get_data();
 	   echo $data['response'];
 	  
-	 
+``` 
 	  index.phtml
-	  
+```php	  
 	   <?php $this->capture() ?>
 	     captured content
 	   <?php $this->end_capture('response') ?>
 	  
-	```
-	 
-	
+
+```
+
 	  end_capture Used by view to signal end of a capture().
 	 
 	  The content of the capture is stored under $name
 	 
 	  Example:
- ```php
+
+
 	  run.php
-	  
+
+```php  
 	   $v = new View('index');
 	   $v->render();
 	   $data = $v->get_data();
 	   echo $data['response'];
-	  
+
+```
 	 
 	  index.phtml
-	  
+
+```php  
 	   <?php $this->capture() ?>
 	     captured content
 	   <?php $this->end_capture('response') ?>
 	  
- ```
+```
 
 
 	  ArrayAccess methods
 
-```php
  
 	  Examples:
 	 
 	  view.php
-	  
+```php	  
 	   <?php echo $this['title'] ?>
 	   <?php $this['foo'] = 'bar' ?>
 	  
@@ -640,7 +654,7 @@ class MyEventClass
         }
     }
 
-  public function notity($listEventName)
+  public function notify($listEventName)
     {
         if (is_array($listEventName)) {
             foreach ($listEventName as $eventName) {
@@ -692,7 +706,7 @@ class MyEventClass2 implements InterfaceEventClass
         }
     }
 
-    public function notity($listEventName)
+    public function notify($listEventName)
     {
         if (is_array($listEventName)) {
             foreach ($listEventName as $eventName) {
@@ -713,7 +727,7 @@ $args);
 $handlers2 = new EventHandlerCollection();
 echo $handlers2->add(new EventHandler(new Event('onLoad'), 'handleLoad'));
 $obj2 = new MyEventClass2(new EventCollection(), $handlers2);
-echo $obj2->notity(['onLoad']);
+echo $obj2->notify(['onLoad']);
 echo $obj2->triggerEvent('onLoad', ['args3' => 43]);
 
 function handleLoad($sender, $args)
@@ -744,6 +758,188 @@ $zip->unzip($source, $destination);
 ```
 
 
+## Hydractor Converte
+
+```php
+$hydra = HydractorConverte::toArry( array, object)
+$hydra = HydractorConverte::toObject(object)
+ 
+ ```
+#Example 
+
+```php
+
+
+class Person
+{
+    private $id;
+    private $firstname;
+    private $lastname;
+    private $username;
+    private $email;
+    private $password;
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = ValidateTypes::getSQLValueString(Ucfirst::_ucfirst($firstname), 'text');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = ValidateTypes::getSQLValueString(Ucfirst::_ucfirst($lastname), 'text');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = ValidateTypes::getSQLValueString($username, 'text');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = ValidateTypes::getSQLValueString($email, 'email');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = Hash::hash_password($password, PASSWORD_DEFAULT);
+    }
+
+ 
+$data['id'] = $_POST['id'];
+$data['firstname'] = $_POST['firstname'];
+$data['lastname'] = $_POST['lastname'];
+$data['username'] = $_POST['username'];
+$data['email'] = $_POST['email'];
+$data['password'] = $_POST['password'];
+
+$obj = HydractorConverte::toArry( $data, new Person() )
+$array = HydractorConverte::toObject($obj)
+
+```
+# Output with HydractorConverte::toArry
+
+
+     Extract values from an object
+     converting the object to an associative array
+     @param  object $object
+     @return array
+   
+    public static function toArray($object): array
+
+
+```php
+
+$obj = HydractorConverte::toArry( $data, new Person() )
+var_dump($obj)
+
+(
+    [id:Person:private] => 1
+    [firstname:Person:private] => Joe
+    [lastname:Person:private] => Doe
+    [username:Person:private] => carmen
+    [email:Person:private] => email@example.com
+    [password:Person:private] =>1234 
+}
+
+```
+# Output with $array = HydractorConverte::toObject(object)
+   
+
+     Convert an array to object 
+     @param  array $array
+     @return objects
+
+    public static function toObject(array $array, $object)
+
+```php
+
+$array = HydractorConverte::toObject($obj)
+
+Array
+(
+    [firstname] => Joe
+    [lastname] => Doe
+    [username] => carmen
+    [email] => email@example.com
+    [password] => $2y$10$vJNLgGV2tK26VcT.Ufbe2OfhJhTbd9Ka2XN1ibx6NtyNf7eFuToWu
+)
+```
+
+```php
+
+    echo $array->getPassword();
+print 
+
+	   $2y$10$vJNLgGV2tK26VcT.Ufbe2OfhJhTbd9Ka2XN1ibx6NtyNf7eFuToWu
+```
+## Logger
+
+```php
+
+$file = new \Ballybran\Helpers\Log\FileLoggerFactory("text.txt", "outra/");
+$b = $file->createLogger();
+echo $b->write(["Hello World", 'other'=>"teste"], "F");
+
+
+$loggerFactory = new \Ballybran\Helpers\Log\StdoutLoggerFactory();
+$logger = $loggerFactory->createLogger();
+echo $logger->write("Hello World");
+ ```
 ## License
 
 [MIT license](LICENSE.md)

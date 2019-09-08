@@ -16,7 +16,7 @@
 
 $c = array(
     "application" => array(
-        "directory" => realpath(dirname(__FILE__)) . "/application",
-    ),
+        "directory" => realpath(dirname(__FILE__)) . "/application" ,
+    ) ,
 );
 

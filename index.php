@@ -13,8 +13,9 @@
  * @license   http://knut7.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  *
- * @version   1.0.2
+ * @version   1.0.6
  */
+
 use Ballybran\Helpers\Routing\Routes;
 
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
@@ -27,22 +28,25 @@ require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
  *
  */
 
-ini_set('display_errors', 1);
+ini_set('display_errors' , 1);
 
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
-$registry->set('PDO',
-                new \Ballybran\Database\Drives\AbstractDatabasePDO(
-                    include __DIR__.'/Config/Database/Config.php'
-                    )
-                );
-$registry->set('MYSQL',
-    new \Ballybran\Database\Drives\AbstractDatabaseMysqli()
-);
-$registry->set('POSTGL',
+$registry->set('PDO' ,
     new \Ballybran\Database\Drives\AbstractDatabasePDO(
-        include __DIR__.'/Config/Database/Config.php'
+        include __DIR__ . '/Config/Database/Config.php'
     )
 );
+$registry->set('MYSQL' ,
+    new \Ballybran\Database\Drives\AbstractDatabaseMysqli()
+);
+$registry->set('POSTGL' ,
+    new \Ballybran\Database\Drives\AbstractDatabasePDO(
+        include __DIR__ . '/Config/Database/Config.php'
+    )
+);
+
+$boot = new Ballybran\Helpers\Routing\Bootstrap();
+$boot->setControllerPath('Controllers');
 Routes::route();
 
 //Map::add('User/', null, function() {

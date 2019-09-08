@@ -1,79 +1,101 @@
 <?php
 
-        /**
-         * KNUT7 K7F (http://knut7.com)
-         * KNUT7 K7F (tm) : Rapid Development Framework (http://knut7.com).
-         *
-         * Licensed under The MIT License
-         * For full copyright and license information, please see the LICENSE.txt
-         * Redistributions of files must retain the above copyright notice.
-         *
-         * @see      http://github.com/knut7/knut7 for the canonical source repository
-         *
-         * @copyright (c) 2015.  KNUT7  Software Technologies AO Inc. (http://knut7.com)
-         * @license   http://knut7.com/license/new-bsd New BSD License
-         * @author    Marcio Zebedeu - artphoweb@artphoweb.com
-         *
-         * @version   1.0.2
-         */
+/**
+ * KNUT7 K7F (http://knut7.com)
+ * KNUT7 K7F (tm) : Rapid Development Framework (http://knut7.com).
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @see      http://github.com/knut7/knut7 for the canonical source repository
+ *
+ * @copyright (c) 2015.  KNUT7  Software Technologies AO Inc. (http://knut7.com)
+ * @license   http://knut7.com/license/new-bsd New BSD License
+ * @author    Marcio Zebedeu - artphoweb@artphoweb.com
+ *
+ * @version   1.0.2
+ */
 
-    /*
-    |--------------------------------------------------------------------------
-    | MY PROJECT NAME
-    |--------------------------------------------------------------------------
-    |   insert the name for your project
+/*
+|--------------------------------------------------------------------------
+| MY PROJECT NAME
+|--------------------------------------------------------------------------
+|   insert the name for your project
+*/
 
-    */
+if (isset($_GET['demo'])) {
+    $demo['demo'] = $_GET['demo'];
+    $MY_PROJECT_NAME = $demo['demo'];
+} else {
+    $MY_PROJECT_NAME = 'Teste';
+}
 
-        if (isset($_GET['demo'])) {
-            $demo['demo'] = $_GET['demo'];
-            $MY_PROJECT_NAME = $demo['demo'];
-        } else {
-            $MY_PROJECT_NAME = '';
-        }
+/*
+|--------------------------------------------------------------------------
+| HEADER TITLE
+|--------------------------------------------------------------------------
+|
+|
+*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | HEADER TITLE
-    |--------------------------------------------------------------------------
-    |
-    |
-    */
+$HEADER_TITLE = 'KNUT 7';
 
-        $HEADER_TITLE = '';
+/*
+|--------------------------------------------------------------------------
+| HEADER DESCRIPTION
+|--------------------------------------------------------------------------
+|
+*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | HEADER DESCRIPTION
-    |--------------------------------------------------------------------------
-    |
-    */
+$HEADER_DESCRIPTION = 'Modelo site de advocacia';
 
-        $HEADER_DESCRIPTION = 'Modelo site de advocacia';
+/*
+|--------------------------------------------------------------------------
+| MY LOCALE
+|--------------------------------------------------------------------------
+|
+*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | MY LOCALE
-    |--------------------------------------------------------------------------
-    |
-    */
+$code = 'en';
+$MY_LOCALE = 'pt_PT.UTF-8';
 
-    $code = 'en';
-    $MY_LOCALE = 'pt_PT.UTF-8';
+/*
+  |--------------------------------------------------------------------------
+  |  DEFAULT_UTC
+  |--------------------------------------------------------------------------
+  |
+  | define('Country UTC - DEFAULT is UTC
+  |
+  */
 
-  /*
-    |--------------------------------------------------------------------------
-    |  Database Connection
-    |--------------------------------------------------------------------------
-    |
-    | define('TYPInsert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
-    |
-    */
+$country_utc = 'Africa/Luanda';
 
-        define('TYPE', 'PDO'); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
-        define('DB_PORT', 8889);
-        define('DB_TYPE', 'mysql');
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'root');
-        define('DB_PASS', 'root');
-        define('DB_NAME', 'adv');
+/*
+|--------------------------------------------------------------------------
+|  Database Connection ERROR
+|--------------------------------------------------------------------------
+|
+| 1 - dev -
+|
+*/
+
+$_dev = '';
+
+/*
+|--------------------------------------------------------------------------
+|  Database Connection
+|--------------------------------------------------------------------------
+|
+| define('TYPInsert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
+|
+*/
+
+define('TYPE' , 'PDO'); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
+define('DB_PORT' , 8889);
+define('DB_TYPE' , 'mysql');
+define('DB_HOST' , 'localhost');
+define('DB_USER' , 'root');
+define('DB_PASS' , 'root');
+define('DB_NAME' , 'Crud');
+

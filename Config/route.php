@@ -22,11 +22,11 @@
  */
 
 
-return array (
+return array(
 
-    'index' => 'index/index',
-    'user' => 'user/List',
-    'XXX' => 'user/novo',
-    'User'=>
+    'index' => 'index/index' ,
+    'user' => 'user/List' ,
+    'XXX' => 'user/novo' ,
+    'User' =>
         array('user' => "user/List")
 );
