@@ -17,9 +17,9 @@
  */
 
 use Ballybran\Helpers\Routing\Routes;
+require 'vendor/autoload.php';
 
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
-require 'vendor/autoload.php';
 require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
 
 /*
@@ -30,9 +30,10 @@ require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
 
 ini_set('display_errors' , 1);
 
+
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set('PDO' ,
-    new \Ballybran\Database\Drives\AbstractDatabasePDO(
+    new Ballybran\Database\Drives\AbstractDatabasePDO(
         include __DIR__ . '/Config/Database/Config.php'
     )
 );
@@ -45,14 +46,10 @@ $registry->set('POSTGL' ,
     )
 );
 
-$boot = new Ballybran\Helpers\Routing\Bootstrap();
-$boot->setControllerPath('Controllers');
-Routes::route();
+require 'Config/routes/web.php';
 
-//Map::add('User/', null, function() {
-//})->exe();
-//
-//$c = Map::add('Index/', null, function() {
-//})->exe();
+//Ballybran\Helpers\Routing\Bootstrap::route();
+
+
 
 exit;

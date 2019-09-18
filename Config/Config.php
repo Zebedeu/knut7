@@ -28,7 +28,7 @@ if (isset($_GET['demo'])) {
     $demo['demo'] = $_GET['demo'];
     $MY_PROJECT_NAME = $demo['demo'];
 } else {
-    $MY_PROJECT_NAME = 'Teste';
+    $MY_PROJECT_NAME = 'App';
 }
 
 /*
@@ -92,7 +92,7 @@ $_dev = '';
 */
 
 define('TYPE' , 'PDO'); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
-define('DB_PORT' , 8889);
+define('DB_PORT' , 3306);
 define('DB_TYPE' , 'mysql');
 define('DB_HOST' , 'localhost');
 define('DB_USER' , 'root');
