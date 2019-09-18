@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace Module\App\Controllers;
 
 
 use Ballybran\Core\Controller\AbstractController;
@@ -12,10 +12,11 @@ class Index extends AbstractController
         parent::__construct();
     }
 
-    public function index(){
+    public function index()
+    {
         $this->view->title = "Welcome!!!";
 
-    	$this->view->render($this, 'index');
+        $this->view->render($this , 'index');
     }
 
 }
