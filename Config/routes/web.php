@@ -28,22 +28,4 @@
 $router = new \Ballybran\Helpers\Routing\Map();
 
 $router->get('/', 'Index#index');
-$router->get('/index/:id-:slug', function($id, $slug){
-    echo "$id  -    $slug";
-    $c = new  \Module\Teste\Controllers\Index();
-
-
-}, "index", null )->with('id', '([0-9]+)')->with('slug', '([a-z]+)');
-
-
-$router->get('/index/', "Index#index");
-$router->get('/api/:id/:teste/:bla', function($id, $c, $d){ echo "Voila l'article";
-return (new Module\Teste\Controllers\Api() )->index($id, $c, $d);
-});
-
-$router->post('/ver/', function(){
-    $d =  new Module\Teste\Controllers\Index();
-    $d->login();
-}, "Index#login", "POST");
-
 $router->run();
