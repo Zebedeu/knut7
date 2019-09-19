@@ -20,7 +20,7 @@ use Ballybran\Helpers\Log\StdoutLogger;
 use Ballybran\Helpers\Log\FileLoggerFactory;
 use Ballybran\Helpers\Log\FileLogger;
 
-class FactoryMethodTest extends PHPUnit
+class StdoutLoggerFactoryTest extends PHPUnit
 {
 
     public function testCanCreateStdoutLogging(){
