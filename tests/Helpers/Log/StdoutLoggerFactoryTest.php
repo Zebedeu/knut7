@@ -15,24 +15,20 @@
  */
 
 use PHPUnit\Framework\TestCase as PHPUnit;
-use Ballybran\Helpers\Log\StdoutLoggerFactory;
-use Ballybran\Helpers\Log\StdoutLogger;
-use Ballybran\Helpers\Log\FileLoggerFactory;
-use Ballybran\Helpers\Log\FileLogger;
 
 class StdoutLoggerFactoryTest extends PHPUnit
 {
 
     public function testCanCreateStdoutLogging(){
 
-        $loggerFactory = new StdoutLoggerFactory();
+        $loggerFactory = new \Ballybran\Helpers\Log\StdoutLoggerFactory();
         $logger = $loggerFactory->createLogger();
-        $this->assertInstanceOf(StdoutLogger::class, $logger);
+        $this->assertInstanceOf(Ballybran\Helpers\Log\StdoutLogger::class, $logger);
     }
 
     public function testCanCreateFileLogging(){
-        $loggerFactory = new FileLoggerFactory(sys_get_temp_dir());
+        $loggerFactory = new \Ballybran\Helpers\Log\FileLoggerFactory(sys_get_temp_dir());
         $logger = $loggerFactory->createLogger();
-        $this->assertInstanceOf(FileLogger::class, $logger);
+        $this->assertInstanceOf(Ballybran\Helpers\Log\FileLogger::class, $logger);
     }
 }
