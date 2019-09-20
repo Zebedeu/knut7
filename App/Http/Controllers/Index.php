@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\App\Controllers;
+namespace App\Http\Controllers;
 
 
 use Ballybran\Core\Controller\AbstractController;
