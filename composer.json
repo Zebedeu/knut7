@@ -20,8 +20,7 @@
     "php": ">=7.0.0",
     "knut7/framework": "*",
     "phpmailer/phpmailer": "~6.0",
-    "phpunit/phpunit": "^7.5",
-    "knut7/knut7": "^1.0"
+    "phpunit/phpunit": "^7.5"
 
 
   },
