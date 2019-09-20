@@ -66,7 +66,7 @@ A knut7- FRAMEWORK segue o padrão arquitetural Modelo Visão e Controller(MVC),
 ```php
 
 
-namespace App\Controllers;
+namespace App\HttpControllers;
 
 
 use Ballybran\Core\Controller\AbstractController;

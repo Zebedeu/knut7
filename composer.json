@@ -21,16 +21,11 @@
     "php": ">=7.0.0",
     "knut7/framework": "*",
     "phpmailer/phpmailer": "~6.0",
+    "phpunit/phpunit": "^7.5"
+
 
   },
-   "autoload": {
-        "psr-4": {
-            "Ballybran\\": "src/Ballybran/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Ballybran\\Tests\\": "tests/"
-        }
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+
 }

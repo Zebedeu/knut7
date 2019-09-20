@@ -24,7 +24,7 @@
  * Time: 7:02 PM
  */
 
-namespace App\Http\Models;
+namespace app\Http\Models;
 
 class IndexModel{
 

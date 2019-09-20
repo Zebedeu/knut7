@@ -28,7 +28,7 @@ if (isset($_GET['demo'])) {
     $demo['demo'] = $_GET['demo'];
     $MY_PROJECT_NAME = $demo['demo'];
 } else {
-    $MY_PROJECT_NAME = 'App';
+    $MY_PROJECT_NAME = 'Http';
 }
 
 /*
