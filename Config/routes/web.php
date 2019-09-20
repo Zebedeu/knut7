@@ -25,7 +25,10 @@
  */
 
 
+
 $router = new \Ballybran\Helpers\Routing\Map();
 
-$router->get('/', 'Index#index');
+//Categoria
+
+$router->get('/', 'Index@index');
 $router->run();
