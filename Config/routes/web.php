@@ -25,10 +25,18 @@
  */
 
 
-
+// Router 
 $router = new \Ballybran\Helpers\Routing\Map();
 
-//Categoria
+
+/*
+* Routes accept a URI, Closure and a name optional
+* example output http://your-app.test/user
+* $router->get('/user', 'Index@index') or $router->get('/user', function(){ return } );
+* $router->get( '/user/:id', function($id) {})->with('id','[0-9]+');
+
+* Available Router Methods: get, post, delete, PUT, url, add
+*/
 
 $router->get('/', 'Index@index');
 $router->run();

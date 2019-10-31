@@ -17,9 +17,13 @@
  */
 
 use Ballybran\Helpers\Routing\Routes;
+
+// composer auto-load
 require 'vendor/autoload.php';
 
+// ballybran configuration. Here contains the main constants etc.
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
+
 require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
 
 /*
