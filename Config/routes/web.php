@@ -17,17 +17,8 @@
  *
  */
 
-/**
- * Created by PhpStorm.
- * User: artphotografie
- * Date: 17/10/17
- * Time: 19:13
- */
-
-
 // Router 
 $router = new \Ballybran\Helpers\Routing\Map();
-
 
 /*
 * Routes accept a URI, Closure and a name optional
