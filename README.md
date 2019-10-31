@@ -253,6 +253,67 @@ class Index extends AbstractController
 	  
 ```
 
+
+ ## In Controller
+```php 
+
+        $data['data'] = ['telephone' => 913000000];
+        return (new View() )->render($this , 'index', $data);
+
+```
+ ## In View - get data
+
+```php
+
+        echo ($this->dot->get("data.telephone"));
+
+ ```
+
+## Acess database in Model
+
+```php
+
+use \Ballybran\Database\Drives\AbstractDatabaseInterface;
+class IndexModel{
+
+    private $database;
+    
+    public function __construct(AbstractDatabaseInterface $database) {
+        $this->database = $database;
+    }
+    
+    public function getAllContacts(){
+        return $this->database->find("Contacto", "*");
+    }
+}
+
+use Ballybran\Core\Controller\AbstractController;
+use Ballybran\Core\View\View;
+
+class Index extends AbstractController
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function index()
+    {
+        $this->view->title = "Home";
+        $data['data'] = $this->model->getAllContacts();
+        return (new View() )->render($this , 'index', $data);
+    }
+    
+
+}
+
+```
+index.php View
+
+```php
+    echo ($this->dot->get("data.telephone"));
+
+```
 ## Examples
 
 With Dot you can chage this regular array syntax:
