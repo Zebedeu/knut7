@@ -28,6 +28,5 @@ $router = new \Ballybran\Helpers\Routing\Map();
 
 * Available Router Methods: get, post, delete, PUT, url, add
 */
-
 $router->get('/', 'Index@index');
 $router->run();

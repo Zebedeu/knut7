@@ -18,11 +18,15 @@
 
 use Ballybran\Helpers\Routing\Routes;
 
+if (!defined('VERSION')) {
+    define('VERSION', '1.0.13.RC');
+}
+
 // composer auto-load
 require 'vendor/autoload.php';
 
 // ballybran configuration. Here contains the main constants etc.
-require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
+require 'vendor/knut7/framework/src/Ballybran/Config/config.php';
 
 require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
 
@@ -38,7 +42,7 @@ ini_set('display_errors' , 1);
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set('PDO' ,
     new Ballybran\Database\Drives\AbstractDatabasePDO(
-        include __DIR__ . '/Config/Database/Config.php'
+        include __DIR__ . '/Config/Database/config.database.php'
     )
 );
 $registry->set('MYSQL' ,
@@ -46,7 +50,7 @@ $registry->set('MYSQL' ,
 );
 $registry->set('POSTGL' ,
     new \Ballybran\Database\Drives\AbstractDatabasePDO(
-        include __DIR__ . '/Config/Database/Config.php'
+        include __DIR__ . '/Config/Database/config.database.php'
     )
 );
 
