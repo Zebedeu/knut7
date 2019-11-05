@@ -19,7 +19,7 @@
 use Ballybran\Helpers\Routing\Routes;
 
 if (!defined('VERSION')) {
-    define('VERSION', '1.0.13');
+    define('VERSION', '1.0.14.RC');
 }
 
 // composer auto-load
