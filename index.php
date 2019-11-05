@@ -1,7 +1,7 @@
 <?php
 /**
- * KNUT7 K7F (http://knut7.com)
- * KNUT7 K7F (tm) : Rapid Development Framework (http://knut7.com).
+ * KNUT7 K7F (https://marciozebedeu.com/)
+ * KNUT7 K7F (tm) : Rapid Development Framework (https://marciozebedeu.com/).
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
@@ -9,8 +9,8 @@
  *
  * @see      http://github.com/knut7/knut7 for the canonical source repository
  *
- * @copyright (c) 2015.  KNUT7  Software Technologies AO Inc. (http://knut7.com)
- * @license   http://knut7.com/license/new-bsd New BSD License
+ * @copyright (c) 2015.  KNUT7  Software Technologies AO Inc. (https://marciozebedeu.com/)
+ * @license   https://marciozebedeu.com//license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  *
  * @version   1.0.6
@@ -19,7 +19,7 @@
 use Ballybran\Helpers\Routing\Routes;
 
 if (!defined('VERSION')) {
-    define('VERSION', '1.0.13.RC');
+    define('VERSION', '1.0.13');
 }
 
 // composer auto-load
