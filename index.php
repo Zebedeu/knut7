@@ -26,38 +26,34 @@ if (!defined('VERSION')) {
 require 'vendor/autoload.php';
 
 // ballybran configuration. Here contains the main constants etc.
-require 'vendor/knut7/framework/src/Ballybran/Config/config.php';
-
-require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
+require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
+require 'vendor/knut7/framework/src/Ballybran/Config/Autoload.php';
 
 /*
  *
  * Load the Bootstrap!
  *
  */
-
+error_reporting(E_ALL);
 ini_set('display_errors' , 1);
 
 
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set('PDO' ,
     new Ballybran\Database\Drives\AbstractDatabasePDO(
-        include __DIR__ . '/Config/Database/config.database.php'
+        include __DIR__ . '/config/Database/config.database.php'
     )
 );
+
 $registry->set('MYSQL' ,
     new \Ballybran\Database\Drives\AbstractDatabaseMysqli()
 );
 $registry->set('POSTGL' ,
     new \Ballybran\Database\Drives\AbstractDatabasePDO(
-        include __DIR__ . '/Config/Database/config.database.php'
+        include __DIR__ . '/config/Database/config.database.php'
     )
 );
 
 require 'Config/routes/web.php';
-
-//Ballybran\Helpers\Routing\Bootstrap::route();
-
-
 
 exit;
