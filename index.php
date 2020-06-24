@@ -40,7 +40,7 @@ ini_set('display_errors' , 1);
 
 $registry = \Ballybran\Database\RegistryDatabase::getInstance();
 $registry->set('PDO' ,
-    new Ballybran\Database\Drives\bstractDatabasePDO(
+    new Ballybran\Database\Drives\AbstractDatabasePDO(
         include __DIR__ . '/config/Database/config.database.php'
     )
 );
@@ -54,6 +54,6 @@ $registry->set('POSTGL' ,
     )
 );
 
-require 'Config/outes/web.php';
+require 'Config/routes/web.php';
 
 exit;
