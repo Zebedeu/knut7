@@ -27,7 +27,7 @@ require 'vendor/autoload.php';
 
 // ballybran configuration. Here contains the main constants etc.
 require 'vendor/knut7/framework/src/Ballybran/Config/Config.php';
-require 'vendor/knut7/framework/src/Ballybran/Config/Autoload.php';
+require 'vendor/knut7/framework/src/Ballybran/Config/autoload.php';
 
 /*
  *
@@ -54,6 +54,6 @@ $registry->set('POSTGL' ,
     )
 );
 
-require 'Config/routes/web.php';
+require 'config/routes/web.php';
 
 exit;
