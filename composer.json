@@ -17,17 +17,19 @@
     }
   ],
   "require": {
-    "php": ">=7.0.0",
+    "php": ">=7.4",
     "knut7/framework": "*",
-    "phpmailer/phpmailer": "~6.0"
+    "psr/http-message": "^1.0",
+    "psr/http-server-middleware": "^1.0"
+
 
 
   },
   "require-dev": {
-    "php": ">=7.0.0",
+    "php": ">=7.4",
     "knut7/framework": "dev-master",
-    "phpmailer/phpmailer": "~6.0",
-    "phpunit/phpunit": "^7.5"
+    "phpunit/phpunit": "^9",
+    "guzzlehttp/guzzle": "^5.3"
 
 
   },
@@ -38,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "tests\\": "tests/"
     }
   },
     "minimum-stability": "dev"
