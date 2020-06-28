@@ -18,6 +18,7 @@
  */
 
 $router = new Ballybran\Routing\Router([
+	// Paths and Namespaces
     'paths' => [
       'controllers' => 'App/Http/Controllers'
     ],
