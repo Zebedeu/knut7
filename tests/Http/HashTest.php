@@ -12,11 +12,6 @@ class HashTest extends TestCase
 {
 
 
-    public function setUp()
-    {
-
-    }
-
     public function testHash()
     {
         $hash = \Ballybran\Helpers\Utility\Hash::token(7777);

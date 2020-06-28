@@ -11,14 +11,6 @@ use PHPUnit\Framework\TestCase as PHPUnit;
 class SessionTest extends PHPUnit
 {
 
-
-    private $init;
-
-    protected function setUp()
-    {
-
-    }
-
     public function testGetUserSession()
     {
         $user = \Ballybran\Helpers\Security\Session::set("U_NAME" , "John Doe");
@@ -35,7 +27,7 @@ class SessionTest extends PHPUnit
 
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         \Ballybran\Helpers\Security\Session::Destroy();
     }

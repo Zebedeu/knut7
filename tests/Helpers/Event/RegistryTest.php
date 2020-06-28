@@ -22,7 +22,7 @@ class RegistryTest extends TestCase
 {
     private $reg;
 
-    public function setUp()
+    public function setUp() :  void
     {
         $this->reg = Registry::getInstance();
 

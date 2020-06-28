@@ -24,7 +24,7 @@ class ControllerTest extends PHPUnit
 
     private $objController;
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->objController = new \Ballybran\Core\Controller\AbstractController();
 
@@ -48,7 +48,7 @@ class ControllerTest extends PHPUnit
     {
 
         $string = "test1234";
-        $hash = Hash::Create(ALGO , $string , HASH_KEY);
+        $hash = Hash::Create("MD5" , $string , "0mh2s0hay2");
 
         $this->assertNotFalse($hash);
 

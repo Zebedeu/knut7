@@ -32,13 +32,13 @@ class ValidateTest extends PHPUnit
     private $val;
 
 
-    protected function assertPreConditions()
+    protected function assertPreConditions(): void
     {
         $this->assertTrue(class_exists($class = 'Ballybran\Helpers\Security\Validate') , "Class $class not exist");
 
     }
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->val = new Val();
         $this->valid = new Validate($this->val);

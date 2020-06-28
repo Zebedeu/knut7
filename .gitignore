@@ -195,3 +195,4 @@ modules.xml
 *.ipr
 
 # End of https://www.gitignore.io/api/node,phpstorm,phpstorm+all,phpstorm+iml
+.DS_Store
