@@ -1,16 +1,14 @@
 ![PHP Composer](https://github.com/knut7/knut7/workflows/PHP%20Composer/badge.svg)
-[![Build Status](https://travis-ci.org/knut7/knut7.svg?branch=master)](https://travis-ci.org/Knut7/Knut7)
 [![license](https://img.shields.io/github/license/Knut7/Knut7.svg)]()
 [![Packagist](https://img.shields.io/packagist/v/Knut7/Knut7.svg)]()
 
-/**
- *
+/*
  * knut7 Framework (https://github.com/knut7/framework/)
  *
  * @link      http://github.com/knut7/knut7 for the canonical source repository
  * @copyright (c) 2016.  MACHIZE Technologies AO Inc. (https://github.com/knut7/framework/)
- * @license   https://github.com/knut7/framework//license/new-bsd New BSD License
  */
+ 
 
 ## Introduction
 Knut7 is a framework created and maintained by MACHIZE to facilitate the rapid development of systems for any experienced developer or not !!
