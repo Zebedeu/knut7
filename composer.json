@@ -17,31 +17,42 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
-    "knut7/framework": "*",
-    "psr/http-message": "^1.0",
-    "psr/http-server-middleware": "^1.0"
-
-
-
-  },
-  "require-dev": {
-    "php": ">=7.4",
+    "php": "^7.4",
     "knut7/framework": "dev-master",
-    "phpunit/phpunit": "^9",
-    "guzzlehttp/guzzle": "^5.3"
+    "phpmailer/phpmailer": "^6.1",
+    "laminas/laminas-crypt": "^3.3",
+    "phpseclib/phpseclib": "^2.0",
+    "rafaelgou/padl": "^1.1",
+    "web-token/jwt-framework": "^2.2",
+    "firebase/php-jwt": "^5.2",
+    "gabordemooij/redbean": "dev-master",
+    "robmorgan/phinx": "^0.12.4"
+},
+"require-dev": {
+    "php": "^7.4",
+    "phpunit/phpunit": "^9.5"
+  },
+  "scripts": {
+    "inspire": "curl -s https://favqs.com/api/qotd | json_pp | awk -F ':[ \t]*' '/^.*\"body\"/ {print $2}'",
+    "fix": "@php vendor/bin/php-cs-fixer fix --config=.php_cs.dist",
+    "tests": "@php vendor/bin/phpunit",
+    "analyse": "@php vendor/bin/phpstan analyse src tests"
+  },
+  "scripts-descriptions": {
+    "inspire": "Will print an inspiring quote",
+    "fix": "Clean and optimize src and tests directories",
+    "tests": "Run unit tests",
+    "analyse": "Analyse project quality using PHPStan"
+  },
+"autoload": {
+  "psr-4": {
+  "App\\": "App/"
+  }
+},
+"autoload-dev": {
+  "psr-4": {
+  "tests\\": "tests/"
+  }
+}
 
-
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "tests\\": "tests/"
-    }
-  },
-    "minimum-stability": "dev"
 }
