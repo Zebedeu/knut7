@@ -99,3 +99,9 @@ define('DB_USER' , 'root');
 define('DB_PASS' , 'root');
 define('DB_NAME' , '');
 
+if(!defined('BASE_PORT')){
+define('BASE_PORT', 8080);
+}
+
+
+
