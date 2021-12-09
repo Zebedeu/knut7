@@ -17,6 +17,9 @@
  * @version   1.0.2
  */
 
+
+$env      = parse_ini_file('env.ini');
+
 /*
 |--------------------------------------------------------------------------
 | MY PROJECT NAME
@@ -39,7 +42,7 @@ if (isset($_GET['demo'])) {
 |
 */
 
-$HEADER_TITLE = 'KNUT 7';
+$HEADER_TITLE = 'Invoice By Kepya';
 
 /*
 |--------------------------------------------------------------------------
@@ -91,17 +94,14 @@ $_dev = '';
 |
 */
 
-define('TYPE' , 'PDO'); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
-define('DB_PORT' , 3306);
-define('DB_TYPE' , 'mysql');
-define('DB_HOST' , 'localhost');
-define('DB_USER' , 'root');
-define('DB_PASS' , 'root');
-define('DB_NAME' , '');
+define('TYPE' , $env["DB_DRIVE"]); // Insert ou type database Drive hire. \\ PDO, MYSQLI, POSTGROUL and SQLite
+define('DB_PORT' , $env["DB_PORT"]);
+define('DB_TYPE' , $env["DB_TYPE"]);
+define('DB_HOST' , $env["DB_HOST"]);
+define('DB_USER' ,  $env["DB_USER"]);
+define('DB_PASS' ,  $env["DB_PASS"]);
+define('DB_NAME' ,  $env["DB_NAME"]);
 
 if(!defined('BASE_PORT')){
-define('BASE_PORT', 8080);
+define('BASE_PORT', $env["BASE_PORT"]);
 }
-
-
-
