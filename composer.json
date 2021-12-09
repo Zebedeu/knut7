@@ -26,7 +26,9 @@
     "web-token/jwt-framework": "^2.2",
     "firebase/php-jwt": "^5.2",
     "gabordemooij/redbean": "dev-master",
-    "robmorgan/phinx": "^0.12.4"
+    "robmorgan/phinx": "^0.12.4",
+    "vlucas/phpdotenv": "^5.4"
+
 },
 "require-dev": {
     "php": "^7.4",
