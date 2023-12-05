@@ -18,15 +18,7 @@
   ],
   "require": {
     "php": "^8.0",
-    "knut7/framework": "dev-master",
-    "phpmailer/phpmailer": "^6.1",
-    "phpseclib/phpseclib": "^2.0",
-    "rafaelgou/padl": "^1.1",
-    "gabordemooij/redbean": "dev-master",
-    "robmorgan/phinx": "^0.12.4",
-    "symfony/http-foundation": "^5.3",
-    "sendgrid/sendgrid": "^7.11",
-    "vlucas/phpdotenv": "^5.4"
+    "knut7/framework": "dev-master"
 },
 "require-dev": {
     "php": "^8.0",
