@@ -2,9 +2,9 @@
 /**
  * knut7 - a simple framework for PHP Developers
  *
- * @author   Marcio Zebedeu (@marciozebedeu) <marciozebedeu@gmail.com>
+ * @author   izni burak demirtaş (@izniburak) <izniburak@gmail.com>
  * @web      <http://burakdemirtas.org>
- * @url      <https://github.com/marciozebedeu/knut7>
+ * @url      <https://github.com/izniburak/knut7>
  * @license  The MIT License (MIT) - <http://opensource.org/licenses/MIT>
  */
 
