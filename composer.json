@@ -18,11 +18,12 @@
   ],
   "require": {
     "php": "^8.0",
-    "knut7/framework": "1.0.15"
+    "knut7/framework": "dev-master"
 },
 "require-dev": {
     "php": "^8.0",
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.5",
+    "filp/whoops": "^2.15"
   },
   "scripts": {
     "inspire": "curl -s https://favqs.com/api/qotd | json_pp | awk -F ':[ \t]*' '/^.*\"body\"/ {print $2}'",
