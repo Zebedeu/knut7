@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a846baaab4f503d08047a1e11d41be9a",
+    "content-hash": "5305932cfc01fec3f08f7e5b5cc8b6e5",
     "packages": [
         {
             "name": "brick/math",
@@ -1836,18 +1836,30 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/knut7/framework.git",
-                "reference": "8828d5456ec60e2a25d68d2d4a838d1c10414ef6"
+                "reference": "25c6cddfa4aacbdbc7fe508b551a1bb22a8dd5b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/knut7/framework/zipball/8828d5456ec60e2a25d68d2d4a838d1c10414ef6",
-                "reference": "8828d5456ec60e2a25d68d2d4a838d1c10414ef6",
+                "url": "https://api.github.com/repos/knut7/framework/zipball/25c6cddfa4aacbdbc7fe508b551a1bb22a8dd5b0",
+                "reference": "25c6cddfa4aacbdbc7fe508b551a1bb22a8dd5b0",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "firebase/php-jwt": "^6.10",
                 "gabordemooij/redbean": "^5.7",
                 "guzzlehttp/guzzle": "^7.8",
+                "illuminate/cache": "^10.35",
+                "illuminate/collections": "^10.35",
+                "illuminate/database": "^10.35",
                 "illuminate/events": "^10.28",
+                "illuminate/filesystem": "^10.35",
+                "illuminate/macroable": "^10.35",
+                "illuminate/pagination": "^10.35",
+                "illuminate/translation": "^10.35",
+                "illuminate/view": "^10.35",
                 "league/plates": "^3.5",
                 "php": "^8.0",
                 "phpmailer/phpmailer": "^6.8",
@@ -1856,8 +1868,13 @@
                 "psr/http-message": "^2.0",
                 "psr/http-server-middleware": "^1.0",
                 "rafaelgou/padl": "^1.1",
+                "ramsey/uuid": "^4.7",
                 "robmorgan/phinx": "^0.15.2",
+                "symfony/cache": "^6.4",
+                "symfony/console": "^6.4",
                 "symfony/http-foundation": "^6.3",
+                "symfony/process": "^6.4",
+                "symfony/var-dumper": "^6.4",
                 "twig/twig": "^3.7",
                 "vlucas/phpdotenv": "^5.5"
             },
@@ -1900,7 +1917,7 @@
                 "issues": "https://github.com/knut7/framework/issues",
                 "source": "https://github.com/knut7/framework/tree/master"
             },
-            "time": "2023-12-05T16:01:28+00:00"
+            "time": "2023-12-07T12:15:02+00:00"
         },
         {
             "name": "league/container",
@@ -7130,10 +7147,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0",
-        "ext-mbstring": "*",
-        "ext-pdo": "*",
-        "ext-json": "*"
+        "php": "^8.0"
     },
     "platform-dev": {
         "php": "^8.0"
