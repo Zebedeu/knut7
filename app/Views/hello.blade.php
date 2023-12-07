@@ -29,7 +29,7 @@
             <a href="https://github.com/knut7/knut7">view on github</a> <span class="blank">|</span>
             <a href="https://github.com/knut7/knut7#docs">documentation</a>
         </h4>
-        <h5>creator, maintainer<br/> <a href="https://github.com/knut7/" title="izni burak demirtaş">izniburak</a></h5>
+        <h5>creator, maintainer<br/> <a href="https://github.com/knut7/" title="Marcio Zebedeu">marciozebedeu</a></h5>
     </div>
 </body>
 </html>
