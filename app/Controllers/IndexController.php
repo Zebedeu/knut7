@@ -18,10 +18,6 @@ class IndexController extends Controller
 
     function main(Request $request): Response
     {
-
-        $model2 =  \App\Models\TesteModel::create([ 'author'=> 'ABCD', 'title'=> 'DFDFDFDDF']);
-        dd($model2);
-
         return blade('hello');
     }
 }
